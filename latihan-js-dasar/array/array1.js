@@ -2,7 +2,7 @@
 
 console .log("array 1 dimensi");
 
-let buah = ["apel","mangga", "jeruk","anggur"]
+let buah = ["apel","jeruk", "jeruk","anggur"]
 
 //menampilkan array
 console.log(buah[2]);
