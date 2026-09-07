@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Formulir Pendaftaran</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <a href="formulirPendaftaran.html">Formulir Pendaftaran</a> |
+          <a href="tabelPeserta.html">Tabel Peserta</a>
+        </nav>
+      </header>
+      <h1>Formulir Pendaftaran</h1>
+      <form action="dataPeserta.html" method="get">
+        <fieldset>
+          <legend>Data Pribadi</legend>
+          <label>Nama:</label><br /><input
+            type="text"
+            name="nama"
+            required
+          /><br /><label>Jenis Kelamin:</label><br /><input
+            type="radio"
+            name="jenisKelamin"
+            value="Laki-Laki"
+            required
+          />
+          Laki-Laki
+          <input type="radio" name="jenisKelamin" value="Perempuan" />
+          Perempuan<br /><label>Agama:</label><br /><select name="agama">
+            <option>Islam</option>
+            <option>Kristen</option>
+            <option>Katolik</option>
+            <option>Hindu</option>
+            <option>Buddha</option>
+            <option>Agama Lain</option></select
+          ><br /><label>Tempat Lahir:</label><br /><input
+            type="text"
+            name="tempatLahir"
+          /><br /><label>Tanggal Lahir:</label><br /><input
+            type="date"
+            name="tanggalLahir"
+          /><br /><label>Alamat:</label><br /><textarea
+            name="alamat"
+            rows="4"
+          ></textarea>
+        </fieldset>
+        <fieldset>
+          <legend>Pendidikan</legend>
+          SD: <input type="text" name="sd" placeholder="Nama sekolah" /> Masuk
+          <input type="text" name="sdMasuk" size="8" /> Keluar
+          <input type="text" name="sdKeluar" size="8" /><br />SMP:
+          <input type="text" name="smp" placeholder="Nama sekolah" /> Masuk
+          <input type="text" name="smpMasuk" size="8" /> Keluar
+          <input type="text" name="smpKeluar" size="8" /><br />SMA:
+          <input type="text" name="sma" placeholder="Nama sekolah" /> Masuk
+          <input type="text" name="smaMasuk" size="8" /> Keluar
+          <input type="text" name="smaKeluar" size="8" />
+        </fieldset>
+        <fieldset>
+          <legend>Pelatihan</legend>
+          Minat:<br /><input type="checkbox" name="minat" value="HTML" /> HTML
+          <input type="checkbox" name="minat" value="CSS" /> CSS
+          <input type="checkbox" name="minat" value="JavaScript" />
+          JavaScript<br />Kompetensi:<br /><input
+            type="checkbox"
+            name="kompetensi"
+            value="HTML"
+          />
+          HTML <input type="checkbox" name="kompetensi" value="PHP" /> PHP
+        </fieldset>
+        <fieldset>
+          <legend>Pilih Jurusan</legend>
+          <select name="jurusan">
+            <option>Teknik Informatika</option>
+            <option>Teknik Elektro</option>
+            <option>Teknik Industri</option>
+            <option>Teknik Sipil</option>
+            <option>Akuntansi</option>
+            <option>Manajemen</option>
+            <option>Perbankan</option>
+            <option>Bisnis Digital</option>
+          </select>
+        </fieldset>
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+      </form>
+      <footer><p>&copy; 2026 Web Pendaftaran</p></footer>
+    </div>
+  </body>
+</html>

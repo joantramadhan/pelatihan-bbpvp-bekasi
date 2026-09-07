@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Data Peserta</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <a href="formulirPendaftaran.html">Formulir Pendaftaran</a> |
+          <a href="tabelPeserta.html">Tabel Peserta</a>
+        </nav>
+      </header>
+      <h1>Hasil Formulir Pendaftaran</h1>
+      <div class="biodata">
+        <section class="data-diri">
+          <h3>Data Pribadi</h3>
+          <div class="data-row">
+            <strong>Nama</strong><span id="nama">-</span>
+          </div>
+          <div class="data-row">
+            <strong>Jenis Kelamin</strong><span id="jenisKelamin">-</span>
+          </div>
+          <div class="data-row">
+            <strong>Agama</strong><span id="agama">-</span>
+          </div>
+          <div class="data-row">
+            <strong>Tempat Lahir</strong><span id="tempatLahir">-</span>
+          </div>
+          <div class="data-row">
+            <strong>Tanggal Lahir</strong><span id="tanggalLahir">-</span>
+          </div>
+          <div class="data-row">
+            <strong>Alamat</strong><span id="alamat">-</span>
+          </div>
+        </section>
+        <section class="pendidikan-data">
+          <h3>Pendidikan</h3>
+          <div class="data-row"><strong>SD</strong><span id="sd">-</span></div>
+          <div class="data-row">
+            <strong>SMP</strong><span id="smp">-</span>
+          </div>
+          <div class="data-row">
+            <strong>SMA</strong><span id="sma">-</span>
+          </div>
+        </section>
+        <section class="pelatihan-data">
+          <h3>Pelatihan</h3>
+          <div class="data-row">
+            <strong>Minat</strong><span id="minat">-</span>
+          </div>
+          <div class="data-row">
+            <strong>Kompetensi</strong><span id="kompetensi">-</span>
+          </div>
+        </section>
+        <section class="jurusan-data">
+          <h3>Jurusan</h3>
+          <div class="data-row">
+            <strong>Pilihan Jurusan</strong><span id="jurusan">-</span>
+          </div>
+        </section>
+      </div>
+      <footer><p>&copy; 2026 Web Pendaftaran</p></footer>
+    </div>
+    <script>
+      const p = new URLSearchParams(location.search);
+      [
+        "nama",
+        "jenisKelamin",
+        "agama",
+        "tempatLahir",
+        "tanggalLahir",
+        "alamat",
+        "sd",
+        "smp",
+        "sma",
+        "jurusan",
+      ].forEach(
+        (k) => (document.getElementById(k).textContent = p.get(k) || "-"),
+      );
+      ["minat", "kompetensi"].forEach(
+        (k) =>
+          (document.getElementById(k).textContent =
+            p.getAll(k).join(", ") || "-"),
+      );
+    </script>
+  </body>
+</html>

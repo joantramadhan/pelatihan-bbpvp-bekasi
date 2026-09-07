@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fffce5;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.aside {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #d8c95c;
+    background-color: #b8b1ee;
+    display: flex;
+    flex-direction: column;
+    border :#04ffd5
+    text   -align: right;
+}
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* FLEXBOX - Navbar */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+   
+}
+
+nav a {
+    color: #5b2c83;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #f1bbbb;
+}
+
+.nav-link {
+    border: 1px solid #5b2c83;
+    padding: 10px 12px;
+    background-color: #04ffd5;
+ border-radius: 50px;
+}
+
+h1 {
+    color: #e78ac3;
+    text-align: center;
+}
+
+fieldset {
+    margin: 20px 0;
+    padding: 18px;
+    border: 2px solid #e8d879;
+    background-color: #b8b1ee;
+}
+
+fieldset:nth-of-type(2),
+fieldset:nth-of-type(4) {
+    background-color: #ffd9c9;
+}
+
+legend {
+    color: #e78ac3;
+    font-weight: bold;
+}
+
+label {
+    display: inline-block;
+    margin: 6px 0;
+}
+
+/* FLEXBOX - Pilihan form */
+.form-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+}
+
+.form-flex label {
+    margin: 0;
+}
+
+input,
+select,
+textarea {
+    margin: 4px 0 10px;
+    padding: 5px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* FLEXBOX - Tombol */
+.form-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+/* Tabel peserta */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff7bf;
+}
+
+th,
+td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    text-align: center;
+}
+
+td a {
+    color: #5b2c83;
+    font-weight: bold;
+}
+
+/* Biodata */
+.biodata section {
+    margin: 18px 0;
+    padding: 15px;
+    border: 1px solid #d8c95c;
+}
+
+.data-diri,
+.pelatihan-data {
+    background-color: #b8b1ee;
+}
+
+.pendidikan-data,
+.jurusan-data {
+    background-color: #ffd9c9;
+}
+
+/* FLEXBOX - Baris biodata */
+.data-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 7px 0;
+}
+
+.data-row strong {
+    flex: 0 0 180px;
+}
+
+.data-row span {
+    flex: 1;
+    min-width: 200px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    border-top: 1px solid #aaa;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+
+    .container {
+        width: 95%;
+    }
+
+    .data-row strong {
+        flex-basis: 100%;
+    }
+
+    .data-row span {
+        min-width: 0;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
