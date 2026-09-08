@@ -41,3 +41,5 @@ var peserta1 = new peserta ('joant ramadhan', 21, 'web pengembangan');
 console.log("nama           : ",peserta1.nama);
 console.log("umur           : ",peserta1.umur);
 console.log("program latihan: ",peserta1.proglat);
+console.log();
+console.log();
