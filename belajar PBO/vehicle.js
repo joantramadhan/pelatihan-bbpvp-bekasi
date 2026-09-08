@@ -8,7 +8,7 @@ class car {
 
 }
 
-module.export= 
+module.exports = car;
 
 
 
