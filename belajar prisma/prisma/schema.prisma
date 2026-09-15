@@ -5,10 +5,30 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client.js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model catergory {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  createdat   DateTime @default(now())
+  updatedat   DateTime @updatedAt
+  movies      movie[]
+}
+
+model movie {
+  id         Int        @id @default(autoincrement())
+  title      String
+  year       Int
+  createdat  DateTime   @default(now())
+  updatedat  DateTime   @updatedAt
+
+  catergory  catergory? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  categoryId Int?
 }
