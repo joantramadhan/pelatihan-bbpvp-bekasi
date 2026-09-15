@@ -1,58 +1,111 @@
-const prisma = require ('../config/utils');
+const prisma = require('../config/utils');
 
 //read
-const getAllmovies = async(req,res) => {
-    try{
+const getAllmovies = async (req, res) => {
+    try {
         const movie = await prisma.movie.findmany({
-            include: {category: true}
+            include: { category: true }
         });
 
         return res.json(movies);
 
-    }catch(error){
+    } catch (error) {
         console.error(error);
-        return res.status(500).json({message : 'internal server error'})
+        return res.status(500).json({ message: 'internal server error' })
     }
 }
 
-const getmoviebyid =async(req,res) => {
+const getmoviebyid = async (req, res) => {
 
     try {
         const id = parseInt(req.parms.id);
-        const movie = await prisma.movie.finduniqe ({
-            where :{id},
-            include: {category : TextTrackCue} 
+        const movie = await prisma.movie.finduniqe({
+            where: { id },
+            include: { category: TextTrackCue }
         });
 
-        if (!movie) return res.status(404).json({massage : 'movie is not found'});
+        if (!movie) return res.status(404).json({ massage: 'movie is not found' });
 
         return res.json(movie);
 
-    }catch (error){
+    } catch (error) {
         console.error(error);
-        return res.status(500).json({message : 'internal server error'})
+        return res.status(500).json({ message: 'internal server error' })
     }
 }
 
 //create
-const createmovie = async(req,res) => {
-    try{
-        const {title,year,categoryid}= req.body;
-        const data = {title,year : parseInt(year)};
+const createmovie = async (req, res) => {
+    try {
+        const { title, year, categoryid } = req.body;
+        const data = { title, year: parseInt(year) };
 
         // jika katergoryid di sertakan, set categoryy
         if (categoryid !== undefined && categoryid !== null) {
-            data.categoryid = parseint (categoryid);
+            data.categoryid = parseint(categoryid);
         }
 
         const movie = await prisma.movie.create({
             data,
-            include: {category: true}
+            include: { category: true }
         })
 
         return res.status(201).json(movie)
-    } catch(error){
+    } catch (error) {
         console.error(error);
-        return res.status(400).json({message: error.message});
+        return res.status(400).json({ message: error.message });
     }
+}
+
+//update / edit
+const updatemovie = async (req, res) => {
+    try {
+        const id = parseint(req.parms.id);
+        const { title, year, categoryid } = req.body;
+
+        const data = { title, year: parseInt(year) };
+
+        if ('categoryid' in req.body) {
+            data.categoryid = categoryid === null ? null : parseInt(categoryid);
+        }
+
+        const movie = await prisma.movie.update({
+            where: { id },
+            data,
+            include: { category: true }
+        })
+
+        return res.json(movie)
+
+    } catch (error) {
+        console.error(error);
+        if (error.code === 'p2025') {
+            return res.status(404).json({ message: 'movie not found' });
+        }
+
+        return res.status(400).json({ message: error.message });
+
+    }
+}
+
+//delete
+const deletemovie = async (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+        await prisma.movie.delete({where : {id}});
+
+
+    } catch (error) {
+        console.error(error);
+        if (error.code === 'p2025') {
+            return res.status(404).json({ message: 'movie not found' });
+        }
+
+        return res.status(400).json({ message: error.message });
+
+    }
+}
+
+Module.exports = {
+    getAllmovies, getmoviebyid, createmovie, updatemovie, deletemovie
 }
