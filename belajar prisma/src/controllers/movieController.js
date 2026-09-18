@@ -3,11 +3,11 @@ const prisma = require('../config/utils');
 //read
 const getAllmovies = async (req, res) => {
     try {
-        const movie = await prisma.movie.findmany({
+        const movie = await prisma.movie.findMany({
             include: { category: true }
         });
 
-        return res.json(movies);
+        return res.json(movie);
 
     } catch (error) {
         console.error(error);
@@ -19,12 +19,12 @@ const getmoviebyid = async (req, res) => {
 
     try {
         const id = parseInt(req.parms.id);
-        const movie = await prisma.movie.finduniqe({
+        const movie = await prisma.movie.findUnique({
             where: { id },
-            include: { category: TextTrackCue }
+            include: { category: true }
         });
 
-        if (!movie) return res.status(404).json({ massage: 'movie is not found' });
+        if (!movie) return res.status(404).json({ message: 'movie is not found' });
 
         return res.json(movie);
 
@@ -60,7 +60,7 @@ const createmovie = async (req, res) => {
 //update / edit
 const updatemovie = async (req, res) => {
     try {
-        const id = parseint(req.parms.id);
+        const id = parseInt(req.params.id);
         const { title, year, categoryid } = req.body;
 
         const data = { title, year: parseInt(year) };
@@ -93,9 +93,12 @@ const deletemovie = async (req, res) => {
     try {
         const id = parseInt(req.params.id);
         await prisma.movie.delete({where : {id}});
-
-
-    } catch (error) {
+        
+        return res.status(201).json({ message : 'berhasil'})
+    } 
+    
+    
+    catch (error) {
         console.error(error);
         if (error.code === 'p2025') {
             return res.status(404).json({ message: 'movie not found' });
@@ -106,6 +109,6 @@ const deletemovie = async (req, res) => {
     }
 }
 
-Module.exports = {
+module.exports = {
     getAllmovies, getmoviebyid, createmovie, updatemovie, deletemovie
 }

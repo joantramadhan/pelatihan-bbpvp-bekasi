@@ -6,4 +6,5 @@ function UserCard (props) {
         </div>
     )
 }
+
 export default UserCard;
