@@ -1,38 +1,50 @@
 function About() {
     return (
-        <section id="about" className="About-section" >
-            <div className= "container">
-                <div className= "row align-item-center min-vh-100 py-5">
+        <section id="about" className="py-5" >
+            <div className="container">
+                <div className="row align-item-center g-5">
                     <div className="col-lg-6">
-                        <span className="badge bg-primary-subtle text-primary px-3 py-2 mb-3">
-                            Solusi Digital Untuk Bisnis Anda
-                        </span>
+                        <div className="about-image">
+                            <i className="bi bi-people-display-1 text-primary"></i>
+                            <h4 className="fw-bold mt-3">
+                                Profesional team
+                            </h4>
+                            <p className="text-secondary">
+                                Team Berpengalaman yang siap Membantu Kebutuhan Digital Anda
+                            </p>
 
-                        <h1 className="display-4 fw-bold mb-4">
-                            Mengembangkan Bisnis
-                            di era Digital
-                        </h1>
-                        <p className = "lead text-secondary mb-4">
-                            Kami Membantu perusahaan membangun solusi digital yang modern, efektif, dan mudah digunakan untuk meningkatkan produktivitas bisnis.
-                        </p>
-                        <div className='d-flex gap-3 flex-wrap' >
-                            <a href='#services' className="btn btn-primary btn-lg px-4">
-                                Tentang Kami
-                            </a>
-                            <a href='#about' className="btn btn-outline-secondary btn-lg px-4">
-                                Tentang Kami
-                            </a>
                         </div>
                         {/*kontak kanan di section About */}
-                        
                     </div>
                     <div className="col-lg-6 mt-5 mt-lg-0">
-                            <div className="About-card shadow-lg">
-                                <i className="bi bi-building display-1 text-primary"></i>
-                                <h3 className="fw-bold mt-4">Tecnology & inovation</h3>
-                                <p className="text-secondary">membawa ide menjadi solusi nyata</p>
+                        <span className="text-primary fw-semibold">
+                            Tentang kami
+                        </span>
+                        <h2 className="display-6 fw-bold mt-2 mb-4">
+                            partner digital untuk pertumbuhan bisnis
+                        </h2>
+                        <p className="text-secondary">
+                            kami menggabungkan teknologi, desain dan pemahaman terhadap kebutuhan bisnis untuk menghasilkan solusi yang tepat
+                        </p>
+                        <div className="roow mt-4">
+                            <div classname='col-6'>
+                                <h3 className='fw-bold text-primary'>
+                                    10+
+                                </h3>
+                                <p className="text-secondary">
+                                    tahun pengalaman
+                                </p>
+                            </div>
+                            <div className="col-6">
+                                <h3 className='fw-bold text-primary'>
+                                    100+
+                                </h3>
+                                <p className="text-secondary">
+                                    Project selesai
+                                </p>
                             </div>
                         </div>
+                    </div>
 
                 </div>
             </div>
