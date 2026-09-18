@@ -1,56 +1,68 @@
+import ServiceCard from "./ServiceCard";
+
 function Services() {
-    return (
-        <section id="Services" className="py-5" >
-            <div className="container">
-                <div className="row align-item-center g-5">
-                    <div className="col-lg-6">
-                        <div className="Services-image">
-                            <i className="bi bi-people-display-1 text-primary"></i>
-                            <h4 className="fw-bold mt-3">
-                                Profesional team
-                            </h4>
-                            <p className="text-secondary">
-                                Team Berpengalaman yang siap Membantu Kebutuhan Digital Anda
-                            </p>
+  const services = [
+    {
+      icon: "bi-laptop",
+      title: "Web Development",
+      description:
+        "Membangun website modern, responsif, dan sesuai kebutuhan.",
+    },
+    {
+      icon: "bi-phone",
+      title: "Mobile Application",
+      description:
+        "Mengembangkan aplikasi mobile untuk Android dan iOS.",
+    },
+    {
+      icon: "bi-bar-chart",
+      title: "Data & Analytics",
+      description:
+        "Mengubah data menjadi informasi yang membantu pengambilan keputusan.",
+    },
+    {
+      icon: "bi-cloud",
+      title: "Cloud Solution",
+      description:
+        "Menyediakan solusi cloud yang fleksibel dan mudah dikembangkan.",
+    },
+  ];
 
-                        </div>
-                        {/*kontak kanan di section Services */}
-                    </div>
-                    <div className="col-lg-6 mt-5 mt-lg-0">
-                        <span className="text-primary fw-semibold">
-                            Tentang kami
-                        </span>
-                        <h2 className="display-6 fw-bold mt-2 mb-4">
-                            partner digital untuk pertumbuhan bisnis
-                        </h2>
-                        <p className="text-secondary">
-                            kami menggabungkan teknologi, desain dan pemahaman terhadap kebutuhan bisnis untuk menghasilkan solusi yang tepat
-                        </p>
-                        <div className="roow mt-4">
-                            <div classname='col-6'>
-                                <h3 className='fw-bold text-primary'>
-                                    10+
-                                </h3>
-                                <p className="text-secondary">
-                                    tahun pengalaman
-                                </p>
-                            </div>
-                            <div className="col-6">
-                                <h3 className='fw-bold text-primary'>
-                                    100+
-                                </h3>
-                                <p className="text-secondary">
-                                    Project selesai
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+  return (
+    <section id="services" className="py-5 bg-light">
+      <div className="container">
 
-                </div>
-            </div>
+        {/* Section Heading */}
+        <div className="text-center mb-5">
+          <span className="text-primary fw-semibold">
+            Our Services
+          </span>
 
-        </section>
-    )
+          <h2 className="fw-bold mt-2">
+            Solusi untuk Kebutuhan Digital
+          </h2>
+
+          <p className="text-secondary mx-auto section-description">
+            Berbagai layanan teknologi untuk membantu bisnis berkembang
+            lebih cepat dan efisien.
+          </p>
+        </div>
+
+        {/* Service Cards */}
+        <div className="row g-4">
+          {services.map((service, index) => (
+            <ServiceCard
+              key={index}
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+            />
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
 }
 
 export default Services;

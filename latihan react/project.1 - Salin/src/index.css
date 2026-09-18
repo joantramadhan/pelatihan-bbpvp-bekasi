@@ -21,6 +21,8 @@ body{
   padding: 40px;
 }
 
+
+
 .about-image{
   min-height: 350px;
   background: #eef5ff;
@@ -32,4 +34,31 @@ body{
   text-align: center;
   padding: 40px;
 
+}
+
+/* Services */
+.section-description {
+  max-width: 600px;
+}
+
+.service-card {
+  transition: all 0.3s ease;
+  border-radius: 16px;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.service-icon{
+  width: 60px;
+  height: 60px;
+  border-radius: 10px ;
+  background:#e9f2ff ;
+  color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: medium ;
 }

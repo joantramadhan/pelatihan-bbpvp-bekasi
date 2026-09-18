@@ -5,7 +5,7 @@ function About() {
                 <div className="row align-item-center g-5">
                     <div className="col-lg-6">
                         <div className="about-image">
-                            <i className="bi bi-people-display-1 text-primary"></i>
+                            <i className="bi bi-people display-1 text-primary"></i>
                             <h4 className="fw-bold mt-3">
                                 Profesional team
                             </h4>
@@ -27,7 +27,7 @@ function About() {
                             kami menggabungkan teknologi, desain dan pemahaman terhadap kebutuhan bisnis untuk menghasilkan solusi yang tepat
                         </p>
                         <div className="roow mt-4">
-                            <div classname='col-6'>
+                            <div className='col-6'>
                                 <h3 className='fw-bold text-primary'>
                                     10+
                                 </h3>
